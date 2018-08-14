@@ -34,9 +34,10 @@ def render(table, params):
         .apply(lambda df: pd.Series([
             df['timestamp'].iloc[0],
             df['timestamp'].iloc[-1],
+            df['timestamp'].iloc[-1] - df['timestamp'].iloc[0],
             df.shape[0] - 1])))
 
-    merged_bursts_columns = ['start', 'end', 'num_events']
+    merged_bursts_columns = ['start', 'end', 'duration', 'num_events']
     if not merged_bursts.empty:
         merged_bursts.columns = merged_bursts_columns
         return merged_bursts
