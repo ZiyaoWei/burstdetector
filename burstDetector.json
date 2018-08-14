@@ -7,9 +7,9 @@
   "help_url": "modules/analyze/burst-detector",
   "parameters": [
     {
-      "name": "",
+      "name": "Date Column",
       "id_name": "date_column_name",
-      "type": "string",
+      "type": "column",
       "placeholder": "Select date column"
     },
     {
